@@ -1,4 +1,4 @@
-# test-aws-amplify
+# aws-amplify-depends
 
 ## Project setup
 ```

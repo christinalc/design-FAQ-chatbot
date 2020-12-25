@@ -1,33 +1,19 @@
 <template>
-  <div id="app" style="max-height:300px">
-    <amplify-chatbot v-bind:chatbotConfig="chatbotConfig"></amplify-chatbot>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import { Interactions } from "aws-amplify";
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
-  name: "App",
-  data: () => ({
-    chatbotConfig: {
-      bot: "OrderFlowers_dev",
-      clearComplete: false,
-    },
-  }),
-  mounted() {
-    Interactions.onComplete("OrderFlowers_dev", this.handleComplete);
-  },
-  methods: {
-    handleComplete(err) {
-      if (err) {
-        alert("bot conversation failed");
-        return;
-      }
-      //alert("done: " + JSON.stringify(confirmation, null, 2));
-      //return "Flower Order Complete. Thank you!";
-    },
-  },
-};
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+}
 </script>
 
 <style>
